@@ -1,1 +1,1 @@
-{"paramodel": ["Multinomial Classifier"], "nonparamodel": ["KNN"], "emodel": ["Random Forest"], "pena": ["lasso"], "imbalance": [], "cross validation": []}
+{"paramodel": ["GLM"], "nonparamodel": ["KNN"], "emodel": ["Bagging"], "pena": [], "imbalance": [], "cross validation": []}
