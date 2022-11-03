@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>temp_2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/MUSA_button-label-button-label.css">
+    <link rel="stylesheet" href="assets/css/MUSA_button-label.css">
+    <link rel="stylesheet" href="assets/css/Rounded-Slider-with-Label.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><strong>No-Free Lunch Demo Web Application</strong></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><div>
+ <form method="post" action="/" enctype="multipart/form-data">
+		<div class='col-xs-12'>
+			<h2>Upload your dataset</h2>
+		</div>
+		
+		<div class='col-xs-6'>
+			<input type="file" class='form-control'  name="file" autocomplete="off" required>
+		</div>
+		
+		<div class='col-xs-6'>
+			{% if alert == 0 %}
+				<p class='alert alert-danger'>File could not be uploaded. Allowed file types are .csv.</p>
+			{% endif %}
+			
+			{% if alert == 1 %}
+				<p class='alert alert-success'>File {{ filename }} successfully uploaded.</p>
+			{% endif %}
+		</div>
+		
+		<br>
+		<div class='col-xs-6' style="display: inline">
+			<input type="submit" class='btn btn-primary'  value="Next">
+			<br><br>
+		</div>
+		</form>   
+    
+
+
+
+</div>
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">Classifiers</label></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4">SVM</label></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"><label class="form-check-label" for="formCheck-5">Label</label></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-6"><label class="form-check-label" for="formCheck-6">Label</label></div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-7"><label class="form-check-label" for="formCheck-7" style="margin-left: 5px;">SVM&nbsp;</label></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2" style="margin-left: 5px;">SVM&nbsp;</label></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="margin-left: 5px;">SVM&nbsp;</label></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">CROSS-VALIDATION</label></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="margin-left: 5px;">10 fOLD</label></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-8"><label class="form-check-label" for="formCheck-8" style="margin-left: 5px;">5 FOLD</label></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-9"><label class="form-check-label" for="formCheck-9" style="margin-left: 5px;">2 FOLDS</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"><div>
+	<h2><u>Dataset Overview:</u></h4><br>
+			<p><h4><b>Number of Rows:</b> {{ rows }} | <b>Number of Columns:</b> {{ cols }}</h4></p>
+			<p><h4><b>Columns Types and Missing Values:</b></h4></p>
+			{{ mv_table | safe }}
+			<p><h4><b>Total number of missing values:</b> {{ missing_values_sum }}</h4></p>
+			<p><h4><b>Descriptive Statistics:</b></h4></p>
+				{{ desc_table | safe }}
+
+
+</div></div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

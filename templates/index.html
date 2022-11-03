@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>temp_2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/MUSA_button-label-button-label.css">
+    <link rel="stylesheet" href="assets/css/MUSA_button-label.css">
+    <link rel="stylesheet" href="assets/css/Rounded-Slider-with-Label.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><strong>No-Free Lunch Demo Web Application</strong></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><div>
+ <form method="post" action="/" enctype="multipart/form-data">
+		<div class='col-xs-12'>
+			<h2>Upload your dataset</h2>
+		</div>
+
+		<div class='col-xs-6'>
+			<input type="file" class='form-control'  name="file" autocomplete="off" required>
+		</div>
+
+		<div class='col-xs-6'>
+			{% if alert == 0 %}
+				<p class='alert alert-danger'>File could not be uploaded. Allowed file types are .csv.</p>
+			{% endif %}
+
+			{% if alert == 1 %}
+				<p class='alert alert-success'>File {{ filename }} successfully uploaded.</p>
+			{% endif %}
+		</div>
+
+		<br>
+		<div class='col-xs-6' style="display: inline">
+			<input type="submit" class='btn btn-primary'  value="Upload">
+			<br><br>
+		</div>
+		</form>
+
+
+
+
+</div>
+<div class="row">
+    <div class="col"></div>
+</div>
+  <form method="post" action="/preprocess">
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">1. Paramatric Classifiers</label></div>
+                </div>
+                <br></br>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=paramodel value="GLM"><label class="form-check-label" for="formCheck-4">GLM</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=paramodel value="Multinomial Classifier"><label class="form-check-label" for="formCheck-4">Multinomial Classifier</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=paramodel value="Naive Bayes"><label class="form-check-label" for="formCheck-4">Naive Bayes</label></div>
+                    </div>
+
+                </div>
+                <br></br>
+
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">2. Non Paramatric Models </label></div>
+                </div>
+                <br></br>
+
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=nonparamodel value="SVM"><label class="form-check-label" for="formCheck-4">SVM</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=nonparamodel value="KNN"><label class="form-check-label" for="formCheck-4">KNN</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=nonparamodel value="Decison Tree"><label class="form-check-label" for="formCheck-4">Decison Tree</label></div>
+                    </div>
+
+                </div>
+                <br></br>
+
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">3. Ensembel Models </label></div>
+                </div>
+                <br></br>
+
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=emodel value="Random Forest"><label class="form-check-label" for="formCheck-4">Random Forest</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=emodel value="Bagging"><label class="form-check-label" for="formCheck-4">Bagging</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=emodel value="Boosting"><label class="form-check-label" for="formCheck-4">Boosting</label></div>
+                    </div>
+
+                </div>
+                <br></br>
+
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">4. Penalization</label></div>
+                </div>
+                <br></br>
+
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=pena value="lasso"><label class="form-check-label" for="formCheck-4">Lasso</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=pena value="ridge"><label class="form-check-label" for="formCheck-4">Ridge</label></div>
+                    </div>
+
+
+                </div>
+                <br></br>
+
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">5. Imbalance Processing </label></div>
+                </div>
+                <br></br>
+
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=imbalance value="over sampling"><label class="form-check-label" for="formCheck-4">over sampling</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=imabalance value="under sampling"><label class="form-check-label" for="formCheck-4">under sampling</label></div>
+                    </div>
+
+                </div>
+                <br></br>
+
+                <div class="row">
+                    <div class="col"><label class="col-form-label" style="padding-left: 0px;margin-left: 24px;">6. Cross Validation</label></div>
+                </div>
+                <br></br>
+
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=cv value="10"><label class="form-check-label" for="formCheck-4">10 Folds</label></div>
+                    </div>
+                    <div class="col-md-4">
+                          <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4" name=cv value="5"><label class="form-check-label" for="formCheck-4">5 Folds</label></div>
+                    </div>
+
+
+                </div>
+                <br></br>
+
+
+
+
+
+
+
+                <div class="row">
+                <div class='col-xs-6' style="display: inline">
+          				<input type="submit" class='btn btn-primary'  value="submit">
+          			<br><br>
+          			</div>
+                </div>
+                </form>
+
+
+            </div>
+            <div class="col-md-6"><div>
+	<h2><u>Dataset Overview:</u></h4><br>
+			<p><h4><b>Number of Rows:</b> {{ rows }} | <b>Number of Columns:</b> {{ cols }}</h4></p>
+			<p><h4><b>Columns Types and Missing Values:</b></h4></p>
+			{{ mv_table | safe }}
+			<p><h4><b>Total number of missing values:</b> {{ missing_values_sum }}</h4></p>
+			<p><h4><b>Descriptive Statistics:</b></h4></p>
+				{{ desc_table | safe }}
+
+
+</div></div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
