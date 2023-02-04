@@ -1,11 +1,31 @@
-# No-Free-Lunch-Web-App
+
+# No-Free Lunch Web Application
+
+The No-Free Lunch theorem in Machine Learning states that “ No Particular Classifier can outperform all the other classifiers for every dataset”, This Project helps in aiding the process of making the lunch free for anyone with a dataset. This project aims to reduce the development time and enhance the productivity of the user, also this project facilitates No-Code Machine Learning i.e allowing the end user to model their data with no need for a single line of Code.
 
 
-TO RUN THE CODE
 
-1. RUN APP.PY
-2. OPEN BROWSER AND TYPE HTTP://localhost:5000
+## Project Requirements
 
-OUTPUT:
+* Python 3.6 or 3.7 
+* Scikit-Learn
+* Seaborn
+* Matplotlib
+* Flask 
+* HTML & CSS
+* Java Script 
+* BootStrap 
 
-results are stored in res.json file. 
+
+
+## Installation
+
+```bash
+  pip install -r requirements.txt 
+  Python3 run app.py 
+```
+
+Open http://localhost:9000 
+
+
+    
